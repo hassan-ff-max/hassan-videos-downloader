@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASSAN ALL VIDEOS DOWNLOADER</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        /* Grid Background Pattern */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Glowing Gradient Text */
+        .glow-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Card Hover Effects */
+        .card-3d {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-3d:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+        }
+        /* Button Glow */
+        .btn-glow {
+            background: linear-gradient(135deg, #0284c7, #2563eb, #7c3aed);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            opacity: 0.95;
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.5);
+            transform: scale(1.01);
+        }
+        /* Developer Floating Button Glow */
+        .dev-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+            border: 1px solid rgba(16, 185, 129, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 p-[2px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                        <i data-lucide="crown" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-heading text-lg font-bold tracking-wider text-white flex items-center gap-1.5">
+                        HASSAN <span class="glow-text">DOWNLOADER</span>
+                    </h1>
+                    <p class="text-[10px] text-slate-400 tracking-widest uppercase font-medium">All Platforms In One Place</p>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#downloader" class="hover:text-cyan-400 transition-colors">Downloader</a>
+                <a href="#platforms" class="hover:text-cyan-400 transition-colors">Platforms</a>
+                <a href="https://whatsapp.com/channel/0029VbDuHz8JJhzb8zf92C1H" target="_blank" class="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    WhatsApp Channel
+                </a>
+                <a href="#how-it-works" class="hover:text-cyan-400 transition-colors">How It Works</a>
+                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ & Help</a>
+            </nav>
+
+            <!-- Right Controls -->
+            <div class="flex items-center gap-3">
+                <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-400">
+                    <i data-lucide="layers" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    <span>Remix</span>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-400">
+                    <i data-lucide="smartphone" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span>Device</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO / MAIN DOWNLOADER SECTION -->
+        <section id="downloader" class="relative pt-12 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+            <!-- Official System Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs text-cyan-300 mb-8 shadow-inner">
+                <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
+                <span class="font-semibold uppercase tracking-wider">Official System</span>
+                <span class="text-slate-500">|</span>
+                <span class="text-slate-300">HASSAN ALL VIDEOS DOWNLOADER</span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 font-heading">
+                HASSAN <span class="glow-text">ALL VIDEOS</span> DOWNLOADER
+            </h2>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10">
+                Download Your Favourite Videos, Photos & Audio From Supported Social Media Platforms.
+            </p>
+
+            <!-- Input Box Form -->
+            <div class="max-w-3xl mx-auto relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 rounded-2xl blur-md opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div class="relative bg-slate-950 border border-slate-800 rounded-2xl p-2 sm:p-3 flex flex-col sm:flex-row items-center gap-3 shadow-2xl">
+                    <div class="relative flex-grow w-full flex items-center">
+                        <i data-lucide="link" class="w-5 h-5 text-slate-500 absolute left-4"></i>
+                        <input type="text" id="video-url-input" placeholder="Paste Your Video Link Here..." class="w-full bg-transparent pl-12 pr-24 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none">
+                        <button type="button" onclick="pasteClipboard()" class="absolute right-3 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-medium text-slate-300 flex items-center gap-1.5 transition-colors">
+                            <i data-lucide="clipboard" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            Paste
+                        </button>
+                    </div>
+                    <button type="button" onclick="handleRedirect()" class="w-full sm:w-auto btn-glow text-white font-bold px-8 py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm sm:text-base whitespace-nowrap shadow-lg">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span>DOWNLOAD</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Test Links -->
+            <div class="mt-6 flex items-center justify-center gap-3 text-xs text-slate-500 flex-wrap">
+                <span>Quick Test:</span>
+                <button type="button" onclick="setQuickTest('https://www.instagram.com/reel/')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">Instagram</button>
+                <button type="button" onclick="setQuickTest('https://www.tiktok.com/')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">TikTok</button>
+                <button type="button" onclick="setQuickTest('https://facebook.com/watch/')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">Facebook</button>
+                <button type="button" onclick="setQuickTest('https://x.com/')" class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">X</button>
+            </div>
+
+            <!-- 4 Features Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                    <div class="flex items-center gap-2 text-cyan-400 font-semibold text-sm mb-1">
+                        <i data-lucide="zap" class="w-4 h-4"></i> Fast & Easy
+                    </div>
+                    <p class="text-xs text-slate-400">Instant link resolution with zero wait time or queue delay.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                    <div class="flex items-center gap-2 text-blue-400 font-semibold text-sm mb-1">
+                        <i data-lucide="smartphone" class="w-4 h-4"></i> Mobile Friendly
+                    </div>
+                    <p class="text-xs text-slate-400">Engineered for seamless saving on iPhone, Android, & tablets.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                    <div class="flex items-center gap-2 text-purple-400 font-semibold text-sm mb-1">
+                        <i data-lucide="shield-off" class="w-4 h-4"></i> No App Required
+                    </div>
+                    <p class="text-xs text-slate-400">100% web-based. Zero software, APKs, or plugins needed.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80">
+                    <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm mb-1">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> High Quality
+                    </div>
+                    <p class="text-xs text-slate-400">Full HD 1080p, original bitrate sound, and max resolution.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLATFORMS SECTION (9 CATEGORIES) -->
+        <section id="platforms" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-cyan-400 font-mono mb-3">
+                    9 SUPPORTED SOCIAL MEDIA NETWORKS
+                </div>
+                <h3 class="text-2xl sm:text-4xl font-bold text-white font-heading">
+                    Separate Downloader <span class="glow-text">Categories</span>
+                </h3>
+                <p class="text-slate-400 text-sm mt-2">Select any supported network below to extract videos, high-resolution stories, audio tracks, and reels.</p>
+            </div>
+
+            <!-- 9 Platform Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- 1. Instagram -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 p-[1px] flex items-center justify-center">
+                                <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
+                                    <i data-lucide="instagram" class="w-6 h-6 text-pink-500"></i>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Popular</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Instagram Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Reels, Videos, Photos & Audio</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Download Instagram Reels, feed videos, IGTV, carousels, and high-resolution photos with audio preservation.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">1080p MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">720p MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">JPG Image</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Original Audio</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. TikTok -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="music-2" class="w-6 h-6 text-cyan-400"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Trending</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">TikTok Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Videos Without Watermark & MP3</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Save trending TikTok videos, soundbites, and original audio in pristine quality with zero watermark.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">HD No Watermark</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Standard MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">MP3 Audio</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Facebook -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="facebook" class="w-6 h-6 text-blue-500"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">HD Quality</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Facebook Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Public Videos & Watch Reels</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Extract public Facebook videos, Watch clips, and timeline recordings in High Definition and Standard Definition.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">1080p HD</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">720p SD</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">MP4 Video</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. X (Twitter) -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="twitter" class="w-6 h-6 text-sky-400"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Ultra Fast</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">X Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Videos, GIFs & Media Posts</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Download X (Twitter) broadcast videos, clips, and looped GIFs directly to your device storage.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">720p MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">480p MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Animated GIF</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. Pinterest -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="pin" class="w-6 h-6 text-red-500"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Full Res</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Pinterest Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Idea Pins, Videos & High-Res Images</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Grab aesthetic Pinterest videos, DIY clips, story pins, and full-resolution graphics with one click.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">1080p Video</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">High-Res JPG</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">PNG Graphic</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6. Threads -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="at-sign" class="w-6 h-6 text-slate-200"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">New</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Threads Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Meta Threads Videos & Photos</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Instant downloader for Meta Threads posts, discussions with video, multi-image posts, and sound.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">HD MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">JPG Image</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Original Audio</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 7. ShareChat -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="share-2" class="w-6 h-6 text-amber-400"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Regional</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">ShareChat Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Indian Regional Clips & Status</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Download trending ShareChat statuses, regional entertainment clips, and viral quotes without hassle.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">HD Video</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Standard Video</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Audio Clip</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 8. Moj -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="play-circle" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Shorts</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Moj Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Short Video Clips & Talent Media</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Extract fun Moj short videos, creator comedy reels, and audio tracks in high playback fidelity.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">High Quality MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Standard MP4</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 9. Snapchat -->
+                <div class="card-3d rounded-2xl p-6 relative flex flex-col justify-between md:col-span-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                                <i data-lucide="ghost" class="w-6 h-6 text-yellow-400"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-slate-800/80 text-[11px] text-slate-300 font-medium">Spotlight</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-1">Snapchat Downloader</h4>
+                        <p class="text-xs font-semibold text-cyan-400 mb-3">Public Spotlight & Stories</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Download accessible public Snapchat Spotlight reels, public stories, and community snaps.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Spotlight MP4</span>
+                            <span class="px-2 py-1 rounded bg-slate-900 text-[10px] text-slate-400 border border-slate-800">Story Video</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="handleRedirect()" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Open Downloader</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </button>
+                        <button type="button" onclick="handleRedirect()" class="p-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHATSAPP CHANNEL BANNER -->
+        <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="relative rounded-3xl p-8 sm:p-10 bg-gradient-to-b from-emerald-950/40 via-slate-950 to-slate-950 border border-emerald-500/30 text-center overflow-hidden shadow-2xl">
+                <div class="absolute -right-16 -top-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-[11px] text-emerald-400 font-semibold mb-4">
+                        <i data-lucide="bell" class="w-3.5 h-3.5"></i> OFFICIAL BROADCAST COMMUNITY
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white font-heading tracking-tight">
+                        JOIN OUR <span class="text-emerald-400">WHATSAPP CHANNEL</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2 max-w-lg mx-auto">Get Latest Updates, New Tools & Exclusive Offers.</p>
+                    <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-slate-300 my-6">
+                        <span class="flex items-center gap-1.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Verified Channel</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i> Instant Feature Drops</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="user-check" class="w-4 h-4 text-emerald-400"></i> Direct Developer Access</span>
+                    </div>
+                    <a href="https://whatsapp.com/channel/0029VbDuHz8JJhzb8zf92C1H" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>JOIN NOW</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <p class="text-[11px] text-slate-500 mt-3">Free to follow • Zero spam</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl sm:text-4xl font-bold text-white font-heading">How It Works</h3>
+                <p class="text-slate-400 text-sm mt-2">No installation, no login credentials. Fast and direct media extraction in seconds.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-extrabold text-slate-700 font-heading">01</span>
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400">
+                            <i data-lucide="copy" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Copy Media Link</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Open Instagram, TikTok, Facebook, X, or any supported app. Tap Share and copy the post or video link to your clipboard.</p>
+                    <span class="text-[11px] text-cyan-400 font-semibold">Step 1 of 3 &rarr;</span>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-extrabold text-slate-700 font-heading">02</span>
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-purple-400">
+                            <i data-lucide="link-2" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Paste into HASSAN</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Paste the link into the HASSAN Downloader box above. Our smart system detects the platform automatically.</p>
+                    <span class="text-[11px] text-purple-400 font-semibold">Step 2 of 3 &rarr;</span>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-extrabold text-slate-700 font-heading">03</span>
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Save to Device</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Click Download to save the video, audio track, or high-res photo directly to your phone gallery or computer.</p>
+                    <span class="text-[11px] text-emerald-400 font-semibold">Step 3 of 3</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE HASSAN -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-cyan-400 font-mono mb-3">
+                    BUILT FOR SPEED & SECURITY
+                </div>
+                <h3 class="text-2xl sm:text-4xl font-bold text-white font-heading">
+                    Why Choose <span class="glow-text">HASSAN</span>?
+                </h3>
+                <p class="text-slate-400 text-sm mt-2">Engineered with modern cyber-tech standards for seamless social media downloading.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 mb-4">
+                        <i data-lucide="shield" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Zero Logins or Passwords</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">We never ask for your social media password, access tokens, or browser cookies. 100% anonymous and safe.</p>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 mb-4">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Ultra-Fast Performance</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Optimized server-side streaming pipelines deliver rapid media resolution without tedious queues.</p>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-pink-400 mb-4">
+                        <i data-lucide="music" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Audio & MP3 Extraction</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Convert trending TikTok sounds, Instagram reels music, and background tracks into high-bitrate audio.</p>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-purple-400 mb-4">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Built-in SSRF & Security Defense</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Safe URL resolution with internal network protection prevents unsafe links and malicious redirects.</p>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400 mb-4">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Universal Device Support</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Flawlessly compatible with Safari on iOS, Chrome on Android, Windows Edge, and macOS.</p>
+                </div>
+                <div class="card-3d rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 mb-4">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-base font-bold text-white mb-2">Verified Downloader Partners</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Automatic fallback to specialized dedicated engines (such as AnySaver for Instagram) ensures 24/7 uptime.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-cyan-400 font-mono mb-3">
+                    <i data-lucide="help-circle" class="w-3.5 h-3.5"></i> FREQUENTLY ASKED QUESTIONS
+                </div>
+                <h3 class="text-2xl sm:text-4xl font-bold text-white font-heading">
+                    Help & <span class="glow-text">Answers</span>
+                </h3>
+                <p class="text-slate-400 text-sm mt-2">Everything you need to know about using HASSAN ALL VIDEOS DOWNLOADER.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(1)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>Is HASSAN ALL VIDEOS DOWNLOADER completely free to use?</span>
+                        <i id="faq-icon-1" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Yes, 100% free! There are no subscriptions, hidden fees, limits on download counts, or mandatory user accounts. You can download public media whenever you want.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(2)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>How does the Instagram Downloader & AnySaver fallback work?</span>
+                        <i id="faq-icon-2" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        When you paste an Instagram link and click Download, our system automatically routes your media request to AnySaver's specialized high-speed engine, allowing smooth resolution without captcha blocks.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(3)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>Where are downloaded videos saved on iPhone and Android?</span>
+                        <i id="faq-icon-3" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        On Android, files are saved directly in your "Downloads" folder or Gallery. On iOS (iPhone/iPad), files are saved in Safari's Download manager, from where you can tap "Save Video" to send it to Photos.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(4)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>Can I download private Instagram, Facebook, or TikTok posts?</span>
+                        <i id="faq-icon-4" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-4" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        Currently, only publicly accessible videos, reels, and photos are supported to ensure user privacy and compliance.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(5)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>What video and audio formats are supported?</span>
+                        <i id="faq-icon-5" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-5" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        We support standard MP4 for all video downloads (1080p, 720p, 480p), MP3 and AAC for audio extraction, and high-resolution JPG/PNG for photo downloads.
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="card-3d rounded-xl overflow-hidden border border-slate-800">
+                    <button type="button" onclick="toggleFaq(6)" class="w-full p-5 text-left font-semibold text-sm text-white flex items-center justify-between">
+                        <span>How do I contact the developer for new features or custom tools?</span>
+                        <i id="faq-icon-6" data-lucide="chevron-down" class="w-4 h-4 text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-6" class="hidden px-5 pb-5 text-xs text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                        You can contact developer HASSAN directly via WhatsApp using the floating green button at the bottom right corner or through the direct link provided in the footer.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Need Help Box -->
+            <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-indigo-950/50 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    <h5 class="text-sm font-bold text-white">Still have a question or need custom assistance?</h5>
+                    <p class="text-xs text-slate-400 mt-0.5">Connect directly with the creator of HASSAN Downloader on WhatsApp.</p>
+                </div>
+                <a href="https://wa.me/+249101767210" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs flex items-center gap-2 whitespace-nowrap transition-colors">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Chat on WhatsApp (+249101767210)</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-purple-600 p-[1px]">
+                        <div class="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center">
+                            <i data-lucide="crown" class="w-4 h-4 text-cyan-400"></i>
+                        </div>
+                    </div>
+                    <span class="font-heading font-bold text-white text-base tracking-wider">HASSAN <span class="glow-text">ALL VIDEOS DOWNLOADER</span></span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    HASSAN ALL VIDEOS DOWNLOADER — ALL SUPPORTED PLATFORMS IN ONE PLACE. High-speed media extraction for Instagram, TikTok, Facebook, X, Pinterest, Threads, ShareChat, Moj, and Snapchat.
+                </p>
+                <p class="text-[11px] text-emerald-400 font-medium mt-3 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    All 9 Downloader Engines Operational
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Quick Navigation</h5>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#downloader" class="hover:text-cyan-400 transition-colors">Video Downloader</a></li>
+                    <li><a href="#platforms" class="hover:text-cyan-400 transition-colors">9 Downloader Categories</a></li>
+                    <li><a href="#how-it-works" class="hover:text-cyan-400 transition-colors">How It Works</a></li>
+                    <li><a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ & Help Center</a></li>
+                    <li><a href="#" class="hover:text-cyan-400 transition-colors">Server Engine Settings</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-4">Direct Contact</h5>
+                <div class="space-y-3">
+                    <a href="https://wa.me/923037224620" target="_blank" class="block p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="message-square" class="w-5 h-5 text-emerald-400"></i>
+                            <div>
+                                <div class="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">DEVELOPER . HASSAN</div>
+                                <div class="text-[10px] text-slate-500">+249101767210 (PROMPT SEND ME)</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbDuHz8JJhzb8zf92C1H" target="_blank" class="block p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="radio" class="w-5 h-5 text-cyan-400"></i>
+                            <div>
+                                <div class="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">WhatsApp Channel</div>
+                                <div class="text-[10px] text-slate-500">Join Free Updates</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div>Designed & Developed by <span class="text-slate-300 font-semibold">HASSAN</span> - All Rights Reserved.</div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING DEVELOPER BUTTON (BOTTOM RIGHT) -->
+    <a href="https://wa.me/923037224620" target="_blank" class="fixed bottom-6 right-6 z-50 dev-glow rounded-2xl bg-slate-950/90 backdrop-blur-md p-3 flex items-center gap-3 transition-transform hover:scale-105 group">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-bold shadow-lg">
+            <i data-lucide="message-circle" class="w-6 h-6 fill-current"></i>
+        </div>
+        <div class="pr-2 text-left">
+            <div class="text-xs font-bold text-white tracking-wide">DEVELOPER</div>
+            <div class="text-[10px] font-mono text-emerald-400">PROMPT SEND ME</div>
+            <div class="text-[9px] text-slate-400">+249101767210</div>
+        </div>
+    </a>
+
+    <!-- JAVASCRIPT REDIRECT & INTERACTION SCRIPT -->
+    <script>
+        // Lucide Icons Render
+        lucide.createIcons();
+
+        // Target External Main Redirect URL
+        const MAIN_REDIRECT_URL = "https://anysaver.app/instagram-video-downloader";
+
+        /**
+         * Redirect Function with Query Parameter Pass-through
+         * First page standard redirect with pasted video link carried over
+         */
+        function handleRedirect() {
+            const inputField = document.getElementById("video-url-input");
+            const rawUrl = inputField.value.trim();
+
+            if (rawUrl) {
+                // Attach user link as query parameter so target site can pick it up
+                const targetWithParam = `${MAIN_REDIRECT_URL}?url=${encodeURIComponent(rawUrl)}`;
+                window.location.href = targetWithParam;
+            } else {
+                // If input is empty, direct redirect
+                window.location.href = MAIN_REDIRECT_URL;
+            }
+        }
+
+        // Paste from Clipboard functionality
+        async function pasteClipboard() {
+            try {
+                const text = await navigator.clipboard.readText();
+                if (text) {
+                    document.getElementById("video-url-input").value = text;
+                }
+            } catch (err) {
+                console.log("Clipboard access denied or not supported.");
+            }
+        }
+
+        // Quick test helper
+        function setQuickTest(sampleUrl) {
+            document.getElementById("video-url-input").value = sampleUrl;
+        }
+
+        // FAQ Toggle Functionality
+        function toggleFaq(num) {
+            const content = document.getElementById(`faq-content-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
